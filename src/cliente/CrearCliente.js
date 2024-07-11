@@ -45,6 +45,7 @@ function CrearCliente() {
             value={id_cliente}
             onChange={(e) => setIdCliente(e.target.value)}
           />
+          <br />
           <label>Dv</label>
           <input
             type="text"
@@ -52,6 +53,7 @@ function CrearCliente() {
             value={dv}
             onChange={(e) => setDv(e.target.value)}
           />
+          <br />
           <label>Nombres</label>
           <input
             type="text"
@@ -59,6 +61,7 @@ function CrearCliente() {
             value={nombres}
             onChange={(e) => setNombres(e.target.value)}
           />
+          <br />
           <label>Apellidos</label>
           <input
             type="text"
@@ -66,6 +69,7 @@ function CrearCliente() {
             value={apellidos}
             onChange={(e) => setApellidos(e.target.value)}
           />
+          <br />
           <label>Email</label>
           <input
             type="email"
@@ -73,6 +77,7 @@ function CrearCliente() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
+          <br />
           <label>Celular</label>
           <input
             type="number"
@@ -81,6 +86,7 @@ function CrearCliente() {
             onChange={(e) => setCelular(e.target.value)}
           />
         </div>
+        <br />
         <button type="submit" className="btn btn-primary">
           Crear cliente
         </button>

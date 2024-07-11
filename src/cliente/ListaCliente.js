@@ -22,7 +22,9 @@ function ListaClientes() {
     <div className="container">
       <h1>Lista de clientes</h1>
       <hr />
-      <a href="/clientes/agregar">Agregar Cliente</a>
+      <a href="/clientes/agregar" className="btn btn-primary">Agregar Cliente</a>
+      <br />
+      <br />
       <table className="table">
         <thead>
           <th>ID</th>
