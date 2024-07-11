@@ -1,11 +1,10 @@
 import React from "react";
-
 function TopBar() {
   return (
-    <div>
+    <>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
-          <a className="navbar-brand" href="/">
+          <a className="navbar-brand" href="#">
             CRM
           </a>
           <button
@@ -27,12 +26,12 @@ function TopBar() {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/cliente">
+                <a className="nav-link" href="/clientes">
                   Clientes
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/usuario">
+                <a className="nav-link" href="/usuarios">
                   Usuarios
                 </a>
               </li>
@@ -40,8 +39,7 @@ function TopBar() {
           </div>
         </div>
       </nav>
-    </div>
+    </>
   );
 }
-
 export default TopBar;
