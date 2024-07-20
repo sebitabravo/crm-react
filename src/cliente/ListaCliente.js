@@ -30,12 +30,13 @@ function ListaClientes() {
       <br />
       <table className="table">
         <thead>
-          <th>ID</th>
-          <th>DV</th>
+          <th>Rut</th>
+          <th>Dv</th>
           <th>Nombres</th>
           <th>Apellidos</th>
           <th>Email</th>
           <th>Celular</th>
+          <th>Fecha</th>
           <th>Opciones</th>
         </thead>
         <tbody>
@@ -47,6 +48,7 @@ function ListaClientes() {
               <td>{cliente.apellidos}</td>
               <td>{cliente.email}</td>
               <td>{cliente.celular}</td>
+              <td>{cliente.fecha_registro}</td>
               <td>
                 <Link
                   to={`/clientes/eliminar/${cliente.id_cliente}`}

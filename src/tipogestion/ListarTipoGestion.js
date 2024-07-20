@@ -31,9 +31,9 @@ function ListaTiposGestion() {
       <table className="table">
         <thead>
           <tr>
-            <th>ID Tipo Gestión</th>
+            <th>Id</th>
             <th>Nombre</th>
-            <th>Fecha de Registro</th>
+            <th>Fecha</th>
             <th>Opciones</th>
           </tr>
         </thead>

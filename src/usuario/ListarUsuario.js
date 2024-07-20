@@ -31,13 +31,14 @@ function ListaUsuarios() {
       <table className="table">
         <thead>
           <tr>
-            <th>ID Usuario</th>
-            <th>DV</th>
+            <th>Rut</th>
+            <th>Dv</th>
             <th>Nombres</th>
             <th>Apellidos</th>
             <th>Email</th>
             <th>Celular</th>
             <th>Username</th>
+            <th>Fecha</th>
             <th>Opciones</th>
           </tr>
         </thead>
@@ -51,6 +52,7 @@ function ListaUsuarios() {
               <td>{usuario.email}</td>
               <td>{usuario.celular}</td>
               <td>{usuario.username}</td>
+              <td>{usuario.fecha_registro}</td>
               <td>
                 <Link
                   to={`/usuarios/eliminar/${usuario.id_usuario}`}

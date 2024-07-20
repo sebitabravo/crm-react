@@ -31,13 +31,13 @@ function ListaGestiones() {
       <table className="table">
         <thead>
           <tr>
-            <th>ID Gestión</th>
+            <th>Id</th>
             <th>Usuario</th>
             <th>Cliente</th>
-            <th>Tipo de Gestión</th>
+            <th>Tipo</th>
             <th>Resultado</th>
             <th>Comentarios</th>
-            <th>Fecha de Registro</th>
+            <th>Fecha</th>
             <th>Opciones</th>
           </tr>
         </thead>

@@ -43,15 +43,15 @@ function CrearUsuario() {
       <hr />
       <form onSubmit={onSubmit}>
         <div className="form-group">
-          <label>ID Usuario</label>
+          <label>Rut</label>
           <input
-            type="text"
+            type="number"
             className="form-control"
             value={id_usuario}
             onChange={(e) => setIdUsuario(e.target.value)}
           />
           <br />
-          <label>DV</label>
+          <label>Dv</label>
           <input
             type="text"
             className="form-control"
@@ -85,7 +85,7 @@ function CrearUsuario() {
           <br />
           <label>Celular</label>
           <input
-            type="text"
+            type="number"
             className="form-control"
             value={celular}
             onChange={(e) => setCelular(e.target.value)}

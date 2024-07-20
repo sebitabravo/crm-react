@@ -31,9 +31,9 @@ function ListaResultados() {
       <table className="table">
         <thead>
           <tr>
-            <th>ID Resultado</th>
+            <th>Id</th>
             <th>Nombre</th>
-            <th>Fecha de Registro</th>
+            <th>Fecha</th>
             <th>Opciones</th>
           </tr>
         </thead>

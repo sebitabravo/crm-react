@@ -38,7 +38,7 @@ function CrearCliente() {
       <hr />
       <form onSubmit={onSubmit}>
         <div className="form-group">
-          <label>RUT</label>
+          <label>Rut</label>
           <input
             type="number"
             className="form-control"
@@ -88,7 +88,7 @@ function CrearCliente() {
         </div>
         <br />
         <button type="submit" className="btn btn-primary">
-          Crear cliente
+          Agregar cliente
         </button>
       </form>
     </div>
