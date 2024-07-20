@@ -10,6 +10,7 @@ function ActualizarCliente() {
     apellidos: "",
     email: "",
     celular: "",
+    fecha_registro: "",
   });
   const { id } = useParams();
   const navigate = useNavigate();
@@ -20,15 +21,29 @@ function ActualizarCliente() {
 
   const cargarDatosCliente = async () => {
     try {
-      const response = await axios.get(`http://144.126.210.74:8080/api/cliente/${id}`);
+      const response = await axios.get(
+        `http://144.126.210.74:8080/api/cliente/${id}`
+      );
       if (response.data && response.data.length > 0) {
-        setCliente(response.data[0]);
+        const clienteData = response.data[0];
+        setCliente({
+          ...clienteData,
+          fecha_registro: formatFecha(clienteData.fecha_registro),
+        });
       } else {
         console.error("No se encontraron datos del cliente.");
       }
     } catch (error) {
       console.error("Error al cargar los datos del cliente:", error);
     }
+  };
+
+  const formatFecha = (fecha) => {
+    const date = new Date(fecha);
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const day = String(date.getDate()).padStart(2, "0");
+    return `${year}-${month}-${day}`;
   };
 
   const onChange = (e) => {
@@ -42,8 +57,10 @@ function ActualizarCliente() {
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.patch(`http://144.126.210.74:8080/api/cliente/${id}`, cliente);
-      console.log("Cliente actualizado exitosamente:", response.data);
+      await axios.patch(
+        `http://144.126.210.74:8080/api/cliente/${id}`,
+        cliente
+      );
       navigate("/clientes");
     } catch (error) {
       console.error("Error al actualizar el cliente:", error);
@@ -108,6 +125,15 @@ function ActualizarCliente() {
             className="form-control"
             name="celular"
             value={cliente.celular}
+            onChange={onChange}
+          />
+          <br />
+          <label>Fecha de Registro</label>
+          <input
+            type="date"
+            className="form-control"
+            name="fecha_registro"
+            value={cliente.fecha_registro}
             onChange={onChange}
           />
         </div>
