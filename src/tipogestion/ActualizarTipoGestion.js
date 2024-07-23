@@ -57,7 +57,7 @@ function ActualizarTipoGestion() {
         `http://144.126.210.74:8080/api/tipo_gestion/${id}`,
         tipoGestion
       );
-      navigate("/tipos_gestion");
+      navigate("/tipogestion");
     } catch (error) {
       console.error("Error al actualizar el tipo de gestión:", error);
     }

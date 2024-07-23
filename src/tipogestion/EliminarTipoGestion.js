@@ -26,7 +26,7 @@ function EliminarTipoGestion() {
     e.preventDefault();
     try {
       await axios.delete(`http://144.126.210.74:8080/api/tipo_gestion/${id}`);
-      navigate("/tipos_gestion");
+      navigate("/tipogestion");
     } catch (error) {
       console.log(error);
     }
@@ -42,7 +42,6 @@ function EliminarTipoGestion() {
           <h2>¿Desea eliminar este tipo de gestión?</h2>
           {tipoGestion && (
             <>
-              <h3>ID Tipo Gestión: {tipoGestion.id_tipo_gestion}</h3>
               <h3>Nombre: {tipoGestion.nombre_tipo_gestion}</h3>
               <button className="btn btn-danger" onClick={onSubmit}>
                 Eliminar Tipo de Gestión

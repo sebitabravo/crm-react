@@ -17,7 +17,7 @@ function CrearTipoGestion() {
         nombre_tipo_gestion,
         fecha_registro,
       });
-      navigate("/tipos_gestion");
+      navigate("/tipogestion");
     } catch (error) {
       console.error(error);
     }

@@ -42,7 +42,6 @@ function EliminarResultado() {
           <h2>¿Desea eliminar este resultado?</h2>
           {resultado && (
             <>
-              <h3>ID Resultado: {resultado.id_resultado}</h3>
               <h3>Nombre: {resultado.nombre_resultado}</h3>
               <button className="btn btn-danger" onClick={onSubmit}>
                 Eliminar resultado
