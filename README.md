@@ -1,78 +1,44 @@
-# Introducción a Create React App
+# Proyecto De CRM En React
 
-Este proyecto fue inicializado con [Create React App](https://github.com/facebook/create-react-app).
+## Comenzando
 
-## Clonar el repositorio
+Para obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas sigue estos pasos.
+
+### Instalación
+
+primero que todo necesitas clonar el repositorio con:
 
 ```bash
 git clone https://github.com/SebitaBravo/crm-react.git
+```
+
+luego debes entrar al projecto donde lo acabas de clonar y ejecutar el siguiente comando:
+
+```bash
 cd crm-react
+```
+
+y finalmente instalar los paquetes necesarios con:
+
+```bash
 npm install
 ```
 
-## Scripts Disponibles
+## Objetivo de este proyecto 
 
-En el directorio del proyecto, puedes ejecutar:
+Este proyecto tiene como objetivo ser un CRM para pequeñas empresas, donde se puedan gestionar los clientes, productos y pedidos de una manera sencilla y eficiente.
 
-### `npm start`
+Anteriormente este proyecto fue realizado con html, css y javascript, pero ahora se esta migrando a react para mejorar la experiencia de usuario y la eficiencia del proyecto.
 
-Ejecuta la aplicación en modo de desarrollo.\
-Abre [http://localhost:3000](http://localhost:3000) para verla en tu navegador.
+El antiguo proyecto se encuentra en el siguiente repositorio: [CRM](https://github.com/SebitaBravo/crm-native)
 
-La página se recargará si haces cambios.\
-También podrás ver errores de lint en la consola.
+## Construido con:
 
-### `npm test`
+- [React](https://es.reactjs.org/) - Librería de JavaScript para construir interfaces de usuario.
+- [React Router](https://reactrouter.com/) - Librería para manejar las rutas de la aplicación.
+- [Axios](https://axios-http.com/) - Cliente HTTP basado en promesas para el navegador y node.js.
+- [bootstrap](https://getbootstrap.com/) - Framework de CSS para el diseño de la aplicación.
 
-Inicia el corredor de pruebas en el modo de observación interactivo.\
-Consulta la sección sobre [ejecutar pruebas](https://facebook.github.io/create-react-app/docs/running-tests) para más información.
+## Licencia
 
-### `npm run build`
-
-Construye la aplicación para producción en la carpeta `build`.\
-Empaqueta correctamente React en modo de producción y optimiza la construcción para obtener el mejor rendimiento.
-
-La construcción se minimiza y los nombres de los archivos incluyen los hashes.\
-¡Tu aplicación está lista para ser desplegada!
-
-Consulta la sección sobre [despliegue](https://facebook.github.io/create-react-app/docs/deployment) para más información.
-
-### `npm run eject`
-
-**Nota: esta es una operación unidireccional. Una vez que `eject`, ¡no puedes volver atrás!**
-
-Si no estás satisfecho con la herramienta de construcción y las opciones de configuración, puedes `eject` en cualquier momento. Este comando eliminará la única dependencia de construcción de tu proyecto.
-
-En su lugar, copiará todos los archivos de configuración y las dependencias transitivas (webpack, Babel, ESLint, etc.) directamente en tu proyecto para que tengas control total sobre ellos. Todos los comandos excepto `eject` seguirán funcionando, pero apuntarán a los scripts copiados para que puedas ajustarlos. A partir de este punto, estás por tu cuenta.
-
-No tienes que usar nunca `eject`. El conjunto de características curadas es adecuado para despliegues pequeños y medianos, y no deberías sentirte obligado a usar esta característica. Sin embargo, entendemos que esta herramienta no sería útil si no pudieras personalizarla cuando estés listo para ello.
-
-## Aprender Más
-
-Puedes aprender más en la [documentación de Create React App](https://facebook.github.io/create-react-app/docs/getting-started).
-
-Para aprender React, revisa la [documentación de React](https://reactjs.org/).
-
-### División de Código
-
-Esta sección se ha movido aquí: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Análisis del Tamaño del Paquete
-
-Esta sección se ha movido aquí: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Crear una Aplicación Web Progresiva
-
-Esta sección se ha movido aquí: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Configuración Avanzada
-
-Esta sección se ha movido aquí: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Despliegue
-
-Esta sección se ha movido aquí: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` falla al minimizar
-
-Esta sección se ha movido aquí: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Al ser un trabajo de univercidad este proyecto no tiene licencia, pero puedes tomarlo y modificarlo a tu gusto.
