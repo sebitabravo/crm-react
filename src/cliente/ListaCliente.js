@@ -11,9 +11,16 @@ function ListaClientes() {
         const response = await axios.get(
           "/api/cliente?_size=500"
         );
-        setCliente(response.data);
+        // Verifica que response.data sea un array
+        if (Array.isArray(response.data)) {
+          setCliente(response.data);
+        } else {
+          console.error("Los datos recibidos no son un array:", response.data);
+          setCliente([]); 
+        }
       } catch (error) {
         console.log(error);
+        setCliente([]); 
       }
     };
     fetchClientes();
@@ -30,41 +37,53 @@ function ListaClientes() {
       <br />
       <table className="table">
         <thead>
-          <th>Rut</th>
-          <th>Dv</th>
-          <th>Nombres</th>
-          <th>Apellidos</th>
-          <th>Email</th>
-          <th>Celular</th>
-          <th>Fecha</th>
-          <th>Opciones</th>
+          <tr>
+            <th>Rut</th>
+            <th>Dv</th>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>Email</th>
+            <th>Celular</th>
+            <th>Fecha</th>
+            <th>Opciones</th>
+          </tr>
         </thead>
         <tbody>
-          {clientes.map((cliente) => (
+          {clientes.length > 0 ? (
+            clientes.map((cliente) => (
+              <tr key={cliente.id_cliente}>
+                <td>{cliente.id_cliente}</td>
+                <td>{cliente.dv}</td>
+                <td>{cliente.nombres}</td>
+                <td>{cliente.apellidos}</td>
+                <td>{cliente.email}</td>
+                <td>{cliente.celular}</td>
+                <td>{cliente.fecha_registro}</td>
+                <td>
+                  <Link
+                    to={`/clientes/eliminar/${cliente.id_cliente}`}
+                    className="btn btn-danger"
+                  >
+                    Eliminar
+                  </Link>
+                  <Link
+                    to={`/clientes/actualizar/${cliente.id_cliente}`}
+                    className="btn btn-warning"
+                  >
+                    Actualizar
+                  </Link>
+                </td>
+              </tr>
+            ))
+          ) : (
             <tr>
-              <td>{cliente.id_cliente}</td>
-              <td>{cliente.dv}</td>
-              <td>{cliente.nombres}</td>
-              <td>{cliente.apellidos}</td>
-              <td>{cliente.email}</td>
-              <td>{cliente.celular}</td>
-              <td>{cliente.fecha_registro}</td>
-              <td>
-                <Link
-                  to={`/clientes/eliminar/${cliente.id_cliente}`}
-                  className="btn btn-danger"
-                >
-                  Eliminar
-                </Link>
-                <Link to={`/clientes/actualizar/${cliente.id_cliente}`} className="btn btn-warning"  >
-                  Actualizar
-                </Link>
-              </td>
+              <td colSpan="8">No hay clientes disponibles</td>
             </tr>
-          ))}
+          )}
         </tbody>
       </table>
     </div>
   );
 }
+
 export default ListaClientes;
