@@ -1,0 +1,81 @@
+.home-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f9;
+    padding: 20px;
+  }
+  
+  .home-content {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+  }
+  
+  .home-title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .home-description {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 30px;
+  }
+  
+  .home-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .home-button {
+    display: block;
+    padding: 15px;
+    font-size: 1.2rem;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .home-button-blue {
+    background-color: #007bff;
+  }
+  
+  .home-button-blue:hover {
+    background-color: #0056b3;
+  }
+  
+  .home-button-green {
+    background-color: #28a745;
+  }
+  
+  .home-button-green:hover {
+    background-color: #1e7e34;
+  }
+  
+  .home-button-yellow {
+    background-color: #ffc107;
+    color: #333;
+  }
+  
+  .home-button-yellow:hover {
+    background-color: #e0a800;
+  }
+  
+  .home-button-purple {
+    background-color: #6f42c1;
+  }
+  
+  .home-button-purple:hover {
+    background-color: #5a32a3;
+  }
+  
