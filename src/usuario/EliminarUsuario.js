@@ -14,7 +14,7 @@ function EliminarUsuario() {
   const cargarDatosUsuario = async () => {
     try {
       const response = await axios.get(
-        `http://144.126.210.74:8080/api/usuario/${id}`
+        `/api/usuario/${id}`
       );
       setUsuario(response.data[0]);
     } catch (error) {
@@ -25,7 +25,7 @@ function EliminarUsuario() {
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.delete(`http://144.126.210.74:8080/api/usuario/${id}`);
+      await axios.delete(`/api/usuario/${id}`);
       navigate("/usuarios");
     } catch (error) {
       console.log(error);

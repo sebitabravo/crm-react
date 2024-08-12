@@ -18,7 +18,7 @@ function ActualizarTipoGestion() {
   const cargarDatosTipoGestion = async () => {
     try {
       const response = await axios.get(
-        `http://144.126.210.74:8080/api/tipo_gestion/${id}`
+        `/api/tipo_gestion/${id}`
       );
       if (response.data && response.data.length > 0) {
         const tipoGestionData = response.data[0];
@@ -54,7 +54,7 @@ function ActualizarTipoGestion() {
     e.preventDefault();
     try {
       await axios.patch(
-        `http://144.126.210.74:8080/api/tipo_gestion/${id}`,
+        `/api/tipo_gestion/${id}`,
         tipoGestion
       );
       navigate("/tipogestion");

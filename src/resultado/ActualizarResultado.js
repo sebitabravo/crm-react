@@ -18,7 +18,7 @@ function ActualizarResultado() {
   const cargarDatosResultado = async () => {
     try {
       const response = await axios.get(
-        `http://144.126.210.74:8080/api/resultado/${id}`
+        `/api/resultado/${id}`
       );
       if (response.data && response.data.length > 0) {
         const resultadoData = response.data[0];
@@ -54,7 +54,7 @@ function ActualizarResultado() {
     e.preventDefault();
     try {
       await axios.patch(
-        `http://144.126.210.74:8080/api/resultado/${id}`,
+        `/api/resultado/${id}`,
         resultado
       );
       navigate("/resultados");

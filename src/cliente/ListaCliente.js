@@ -9,7 +9,7 @@ function ListaClientes() {
     const fetchClientes = async () => {
       try {
         const response = await axios.get(
-          "http://144.126.210.74:8080/api/cliente?_size=500"
+          "/api/cliente?_size=500"
         );
         setCliente(response.data);
       } catch (error) {

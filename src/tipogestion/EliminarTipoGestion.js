@@ -14,7 +14,7 @@ function EliminarTipoGestion() {
   const cargarDatosTipoGestion = async () => {
     try {
       const response = await axios.get(
-        `http://144.126.210.74:8080/api/tipo_gestion/${id}`
+        `/api/tipo_gestion/${id}`
       );
       setTipoGestion(response.data[0]);
     } catch (error) {
@@ -25,7 +25,7 @@ function EliminarTipoGestion() {
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.delete(`http://144.126.210.74:8080/api/tipo_gestion/${id}`);
+      await axios.delete(`/api/tipo_gestion/${id}`);
       navigate("/tipogestion");
     } catch (error) {
       console.log(error);

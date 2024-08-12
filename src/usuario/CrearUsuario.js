@@ -20,7 +20,7 @@ function CrearUsuario() {
         .toISOString()
         .slice(0, 19)
         .replace("T", " ");
-      await axios.post("http://144.126.210.74:8080/api/usuario", {
+      await axios.post("/api/usuario", {
         id_usuario,
         dv,
         nombres,

@@ -24,7 +24,7 @@ function ActualizarUsuario() {
   const cargarDatosUsuario = async () => {
     try {
       const response = await axios.get(
-        `http://144.126.210.74:8080/api/usuario/${id}`
+        `/api/usuario/${id}`
       );
       if (response.data && response.data.length > 0) {
         const usuarioData = response.data[0];

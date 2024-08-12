@@ -13,7 +13,7 @@ function CrearTipoGestion() {
         .toISOString()
         .slice(0, 19)
         .replace("T", " ");
-      await axios.post("http://144.126.210.74:8080/api/tipo_gestion", {
+      await axios.post("/api/tipo_gestion", {
         nombre_tipo_gestion,
         fecha_registro,
       });

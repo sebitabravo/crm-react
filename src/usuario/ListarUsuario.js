@@ -9,7 +9,7 @@ function ListaUsuarios() {
     const fetchUsuarios = async () => {
       try {
         const response = await axios.get(
-          "http://144.126.210.74:8080/api/usuario?_size=500"
+          "/api/usuario?_size=500"
         );
         setUsuarios(response.data);
       } catch (error) {

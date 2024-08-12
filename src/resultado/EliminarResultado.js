@@ -14,7 +14,7 @@ function EliminarResultado() {
   const cargarDatosResultado = async () => {
     try {
       const response = await axios.get(
-        `http://144.126.210.74:8080/api/resultado/${id}`
+        `/api/resultado/${id}`
       );
       setResultado(response.data[0]);
     } catch (error) {
@@ -25,7 +25,7 @@ function EliminarResultado() {
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.delete(`http://144.126.210.74:8080/api/resultado/${id}`);
+      await axios.delete(`/api/resultado/${id}`);
       navigate("/resultados");
     } catch (error) {
       console.log(error);

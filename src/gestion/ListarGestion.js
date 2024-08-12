@@ -9,7 +9,7 @@ function ListaGestiones() {
     const fetchGestiones = async () => {
       try {
         const response = await axios.get(
-          "http://144.126.210.74:8080/api/gestion?_size=500"
+          "/api/gestion?_size=500"
         );
         setGestiones(response.data);
       } catch (error) {

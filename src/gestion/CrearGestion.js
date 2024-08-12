@@ -17,16 +17,16 @@ function CrearGestion() {
   useEffect(() => {
     const fetchData = async () => {
       const usuariosResponse = await axios.get(
-        "http://144.126.210.74:8080/api/usuario"
+        "/api/usuario"
       );
       const clientesResponse = await axios.get(
-        "http://144.126.210.74:8080/api/cliente"
+        "/api/cliente"
       );
       const tiposGestionResponse = await axios.get(
-        "http://144.126.210.74:8080/api/tipo_gestion"
+        "/api/tipo_gestion"
       );
       const resultadosResponse = await axios.get(
-        "http://144.126.210.74:8080/api/resultado"
+        "/api/resultado"
       );
 
       setUsuarios(usuariosResponse.data);
@@ -45,7 +45,7 @@ function CrearGestion() {
         .toISOString()
         .slice(0, 19)
         .replace("T", " ");
-      await axios.post("http://144.126.210.74:8080/api/gestion", {
+      await axios.post("/api/gestion", {
         id_usuario,
         id_cliente,
         id_tipo_gestion,

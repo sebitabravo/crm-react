@@ -22,7 +22,7 @@ function ActualizarCliente() {
   const cargarDatosCliente = async () => {
     try {
       const response = await axios.get(
-        `http://144.126.210.74:8080/api/cliente/${id}`
+        `/api/cliente/${id}`
       );
       if (response.data && response.data.length > 0) {
         const clienteData = response.data[0];
@@ -58,7 +58,7 @@ function ActualizarCliente() {
     e.preventDefault();
     try {
       await axios.patch(
-        `http://144.126.210.74:8080/api/cliente/${id}`,
+        `/api/cliente/${id}`,
         cliente
       );
       navigate("/clientes");

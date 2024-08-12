@@ -9,7 +9,7 @@ function ListaTiposGestion() {
     const fetchTiposGestion = async () => {
       try {
         const response = await axios.get(
-          "http://144.126.210.74:8080/api/tipo_gestion?_size=500"
+          "/api/tipo_gestion?_size=500"
         );
         setTiposGestion(response.data);
       } catch (error) {

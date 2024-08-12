@@ -14,7 +14,7 @@ function EliminarGestion() {
   const cargarDatosGestion = async () => {
     try {
       const response = await axios.get(
-        `http://144.126.210.74:8080/api/gestion/${id}`
+        `/api/gestion/${id}`
       );
       setGestion(response.data[0]);
     } catch (error) {
@@ -25,7 +25,7 @@ function EliminarGestion() {
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.delete(`http://144.126.210.74:8080/api/gestion/${id}`);
+      await axios.delete(`/api/gestion/${id}`);
       navigate("/gestiones");
     } catch (error) {
       console.log(error);

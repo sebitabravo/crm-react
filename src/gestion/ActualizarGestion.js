@@ -22,7 +22,7 @@ function ActualizarGestion() {
   const cargarDatosGestion = async () => {
     try {
       const response = await axios.get(
-        `http://144.126.210.74:8080/api/gestion/${id}`
+        `/api/gestion/${id}`
       );
       if (response.data && response.data.length > 0) {
         const gestionData = response.data[0];
@@ -58,7 +58,7 @@ function ActualizarGestion() {
     e.preventDefault();
     try {
       await axios.patch(
-        `http://144.126.210.74:8080/api/gestion/${id}`,
+        `/api/gestion/${id}`,
         gestion
       );
       navigate("/gestiones");

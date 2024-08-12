@@ -14,7 +14,7 @@ function EliminarCliente() {
   const cargarDatosCliente = async () => {
     try {
       const response = await axios.get(
-        `http://144.126.210.74:8080/api/cliente/${id}`
+        `/api/cliente/${id}`
       );
       setCliente(response.data[0]);
     } catch (error) {
@@ -24,7 +24,7 @@ function EliminarCliente() {
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.delete(`http://144.126.210.74:8080/api/cliente/${id}`);
+      await axios.delete(`/api/cliente/${id}`);
       navigate("/clientes");
     } catch (error) {
       console.log(error);
