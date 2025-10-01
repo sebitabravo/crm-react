@@ -38,5 +38,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://144.126.210.74:8080"
+  "proxy": "https://crm-backend-avso2v-374d28-72-60-65-170.traefik.me"
 }
