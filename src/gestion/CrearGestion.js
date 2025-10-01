@@ -16,23 +16,31 @@ function CrearGestion() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const usuariosResponse = await axios.get(
-        "/api/usuario"
-      );
-      const clientesResponse = await axios.get(
-        "/api/cliente"
-      );
-      const tiposGestionResponse = await axios.get(
-        "/api/tipo_gestion"
-      );
-      const resultadosResponse = await axios.get(
-        "/api/resultado"
-      );
+      try {
+        const usuariosResponse = await axios.get(
+          "/api/usuario"
+        );
+        const clientesResponse = await axios.get(
+          "/api/cliente"
+        );
+        const tiposGestionResponse = await axios.get(
+          "/api/tipo_gestion"
+        );
+        const resultadosResponse = await axios.get(
+          "/api/resultado"
+        );
 
-      setUsuarios(usuariosResponse.data);
-      setClientes(clientesResponse.data);
-      setTiposGestion(tiposGestionResponse.data);
-      setResultados(resultadosResponse.data);
+        setUsuarios(Array.isArray(usuariosResponse.data) ? usuariosResponse.data : []);
+        setClientes(Array.isArray(clientesResponse.data) ? clientesResponse.data : []);
+        setTiposGestion(Array.isArray(tiposGestionResponse.data) ? tiposGestionResponse.data : []);
+        setResultados(Array.isArray(resultadosResponse.data) ? resultadosResponse.data : []);
+      } catch (error) {
+        console.error("Error al cargar datos:", error);
+        setUsuarios([]);
+        setClientes([]);
+        setTiposGestion([]);
+        setResultados([]);
+      }
     };
 
     fetchData();
