@@ -18,27 +18,26 @@ function ActualizarUsuario() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    cargarDatosUsuario();
-  }, []);
-
-  const cargarDatosUsuario = async () => {
-    try {
-      const response = await axios.get(
-        `/api/usuario/${id}`
-      );
-      if (response.data && response.data.length > 0) {
-        const usuarioData = response.data[0];
-        setUsuario({
-          ...usuarioData,
-          fecha_registro: formatFecha(usuarioData.fecha_registro),
-        });
-      } else {
-        console.error("No se encontraron datos del usuario.");
+    const cargarDatosUsuario = async () => {
+      try {
+        const response = await axios.get(
+          `/api/usuario/${id}`
+        );
+        if (response.data && response.data.length > 0) {
+          const usuarioData = response.data[0];
+          setUsuario({
+            ...usuarioData,
+            fecha_registro: formatFecha(usuarioData.fecha_registro),
+          });
+        } else {
+          console.error("No se encontraron datos del usuario.");
+        }
+      } catch (error) {
+        console.error("Error al cargar los datos del usuario:", error);
       }
-    } catch (error) {
-      console.error("Error al cargar los datos del usuario:", error);
-    }
-  };
+    };
+    cargarDatosUsuario();
+  }, [id]);
 
   const formatFecha = (fecha) => {
     const date = new Date(fecha);
@@ -60,7 +59,7 @@ function ActualizarUsuario() {
     e.preventDefault();
     try {
       await axios.patch(
-        `http://144.126.210.74:8080/api/usuario/${id}`,
+        `/api/usuario/${id}`,
         usuario
       );
       navigate("/usuarios");

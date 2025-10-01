@@ -8,19 +8,18 @@ function EliminarTipoGestion() {
   const navigate = useNavigate();
 
   useEffect(() => {
+    const cargarDatosTipoGestion = async () => {
+      try {
+        const response = await axios.get(
+          `/api/tipo_gestion/${id}`
+        );
+        setTipoGestion(response.data[0]);
+      } catch (error) {
+        console.log(error);
+      }
+    };
     cargarDatosTipoGestion();
-  }, []);
-
-  const cargarDatosTipoGestion = async () => {
-    try {
-      const response = await axios.get(
-        `/api/tipo_gestion/${id}`
-      );
-      setTipoGestion(response.data[0]);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  }, [id]);
 
   const onSubmit = async (e) => {
     e.preventDefault();

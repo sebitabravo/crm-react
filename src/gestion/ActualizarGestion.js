@@ -16,27 +16,26 @@ function ActualizarGestion() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    cargarDatosGestion();
-  }, []);
-
-  const cargarDatosGestion = async () => {
-    try {
-      const response = await axios.get(
-        `/api/gestion/${id}`
-      );
-      if (response.data && response.data.length > 0) {
-        const gestionData = response.data[0];
-        setGestion({
-          ...gestionData,
-          fecha_registro: formatFecha(gestionData.fecha_registro),
-        });
-      } else {
-        console.error("No se encontraron datos de la gestión.");
+    const cargarDatosGestion = async () => {
+      try {
+        const response = await axios.get(
+          `/api/gestion/${id}`
+        );
+        if (response.data && response.data.length > 0) {
+          const gestionData = response.data[0];
+          setGestion({
+            ...gestionData,
+            fecha_registro: formatFecha(gestionData.fecha_registro),
+          });
+        } else {
+          console.error("No se encontraron datos de la gestión.");
+        }
+      } catch (error) {
+        console.error("Error al cargar los datos de la gestión:", error);
       }
-    } catch (error) {
-      console.error("Error al cargar los datos de la gestión:", error);
-    }
-  };
+    };
+    cargarDatosGestion();
+  }, [id]);
 
   const formatFecha = (fecha) => {
     const date = new Date(fecha);

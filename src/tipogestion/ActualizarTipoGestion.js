@@ -12,27 +12,26 @@ function ActualizarTipoGestion() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    cargarDatosTipoGestion();
-  }, []);
-
-  const cargarDatosTipoGestion = async () => {
-    try {
-      const response = await axios.get(
-        `/api/tipo_gestion/${id}`
-      );
-      if (response.data && response.data.length > 0) {
-        const tipoGestionData = response.data[0];
-        setTipoGestion({
-          ...tipoGestionData,
-          fecha_registro: formatFecha(tipoGestionData.fecha_registro),
-        });
-      } else {
-        console.error("No se encontraron datos del tipo de gestión.");
+    const cargarDatosTipoGestion = async () => {
+      try {
+        const response = await axios.get(
+          `/api/tipo_gestion/${id}`
+        );
+        if (response.data && response.data.length > 0) {
+          const tipoGestionData = response.data[0];
+          setTipoGestion({
+            ...tipoGestionData,
+            fecha_registro: formatFecha(tipoGestionData.fecha_registro),
+          });
+        } else {
+          console.error("No se encontraron datos del tipo de gestión.");
+        }
+      } catch (error) {
+        console.error("Error al cargar los datos del tipo de gestión:", error);
       }
-    } catch (error) {
-      console.error("Error al cargar los datos del tipo de gestión:", error);
-    }
-  };
+    };
+    cargarDatosTipoGestion();
+  }, [id]);
 
   const formatFecha = (fecha) => {
     const date = new Date(fecha);

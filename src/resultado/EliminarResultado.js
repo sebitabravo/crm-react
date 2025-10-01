@@ -8,19 +8,18 @@ function EliminarResultado() {
   const navigate = useNavigate();
 
   useEffect(() => {
+    const cargarDatosResultado = async () => {
+      try {
+        const response = await axios.get(
+          `/api/resultado/${id}`
+        );
+        setResultado(response.data[0]);
+      } catch (error) {
+        console.log(error);
+      }
+    };
     cargarDatosResultado();
-  }, []);
-
-  const cargarDatosResultado = async () => {
-    try {
-      const response = await axios.get(
-        `/api/resultado/${id}`
-      );
-      setResultado(response.data[0]);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  }, [id]);
 
   const onSubmit = async (e) => {
     e.preventDefault();

@@ -8,19 +8,19 @@ function EliminarCliente() {
   const navigate = useNavigate();
 
   useEffect(() => {
+    const cargarDatosCliente = async () => {
+      try {
+        const response = await axios.get(
+          `/api/cliente/${id}`
+        );
+        setCliente(response.data[0]);
+      } catch (error) {
+        console.log(error);
+      }
+    };
     cargarDatosCliente();
-  }, []);
-
-  const cargarDatosCliente = async () => {
-    try {
-      const response = await axios.get(
-        `/api/cliente/${id}`
-      );
-      setCliente(response.data[0]);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  }, [id]);
+  
   const onSubmit = async (e) => {
     e.preventDefault();
     try {

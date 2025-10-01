@@ -8,19 +8,18 @@ function EliminarGestion() {
   const navigate = useNavigate();
 
   useEffect(() => {
+    const cargarDatosGestion = async () => {
+      try {
+        const response = await axios.get(
+          `/api/gestion/${id}`
+        );
+        setGestion(response.data[0]);
+      } catch (error) {
+        console.log(error);
+      }
+    };
     cargarDatosGestion();
-  }, []);
-
-  const cargarDatosGestion = async () => {
-    try {
-      const response = await axios.get(
-        `/api/gestion/${id}`
-      );
-      setGestion(response.data[0]);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  }, [id]);
 
   const onSubmit = async (e) => {
     e.preventDefault();

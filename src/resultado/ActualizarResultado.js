@@ -12,27 +12,26 @@ function ActualizarResultado() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    cargarDatosResultado();
-  }, []);
-
-  const cargarDatosResultado = async () => {
-    try {
-      const response = await axios.get(
-        `/api/resultado/${id}`
-      );
-      if (response.data && response.data.length > 0) {
-        const resultadoData = response.data[0];
-        setResultado({
-          ...resultadoData,
-          fecha_registro: formatFecha(resultadoData.fecha_registro),
-        });
-      } else {
-        console.error("No se encontraron datos del resultado.");
+    const cargarDatosResultado = async () => {
+      try {
+        const response = await axios.get(
+          `/api/resultado/${id}`
+        );
+        if (response.data && response.data.length > 0) {
+          const resultadoData = response.data[0];
+          setResultado({
+            ...resultadoData,
+            fecha_registro: formatFecha(resultadoData.fecha_registro),
+          });
+        } else {
+          console.error("No se encontraron datos del resultado.");
+        }
+      } catch (error) {
+        console.error("Error al cargar los datos del resultado:", error);
       }
-    } catch (error) {
-      console.error("Error al cargar los datos del resultado:", error);
-    }
-  };
+    };
+    cargarDatosResultado();
+  }, [id]);
 
   const formatFecha = (fecha) => {
     const date = new Date(fecha);

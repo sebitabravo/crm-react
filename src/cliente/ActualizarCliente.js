@@ -16,27 +16,26 @@ function ActualizarCliente() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    cargarDatosCliente();
-  }, []);
-
-  const cargarDatosCliente = async () => {
-    try {
-      const response = await axios.get(
-        `/api/cliente/${id}`
-      );
-      if (response.data && response.data.length > 0) {
-        const clienteData = response.data[0];
-        setCliente({
-          ...clienteData,
-          fecha_registro: formatFecha(clienteData.fecha_registro),
-        });
-      } else {
-        console.error("No se encontraron datos del cliente.");
+    const cargarDatosCliente = async () => {
+      try {
+        const response = await axios.get(
+          `/api/cliente/${id}`
+        );
+        if (response.data && response.data.length > 0) {
+          const clienteData = response.data[0];
+          setCliente({
+            ...clienteData,
+            fecha_registro: formatFecha(clienteData.fecha_registro),
+          });
+        } else {
+          console.error("No se encontraron datos del cliente.");
+        }
+      } catch (error) {
+        console.error("Error al cargar los datos del cliente:", error);
       }
-    } catch (error) {
-      console.error("Error al cargar los datos del cliente:", error);
-    }
-  };
+    };
+    cargarDatosCliente();
+  }, [id]);
 
   const formatFecha = (fecha) => {
     const date = new Date(fecha);

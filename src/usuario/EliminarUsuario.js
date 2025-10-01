@@ -8,19 +8,18 @@ function EliminarUsuario() {
   const navigate = useNavigate();
 
   useEffect(() => {
+    const cargarDatosUsuario = async () => {
+      try {
+        const response = await axios.get(
+          `/api/usuario/${id}`
+        );
+        setUsuario(response.data[0]);
+      } catch (error) {
+        console.log(error);
+      }
+    };
     cargarDatosUsuario();
-  }, []);
-
-  const cargarDatosUsuario = async () => {
-    try {
-      const response = await axios.get(
-        `/api/usuario/${id}`
-      );
-      setUsuario(response.data[0]);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  }, [id]);
 
   const onSubmit = async (e) => {
     e.preventDefault();
