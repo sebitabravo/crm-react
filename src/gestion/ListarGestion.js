@@ -11,9 +11,10 @@ function ListaGestiones() {
         const response = await axios.get(
           "/api/gestion?_size=500"
         );
-        setGestiones(response.data);
+        setGestiones(Array.isArray(response.data) ? response.data : []);
       } catch (error) {
         console.log(error);
+        setGestiones([]);
       }
     };
     fetchGestiones();

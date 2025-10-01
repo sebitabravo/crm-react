@@ -11,9 +11,10 @@ function ListaResultados() {
         const response = await axios.get(
           "/api/resultado?_size=500"
         );
-        setResultados(response.data);
+        setResultados(Array.isArray(response.data) ? response.data : []);
       } catch (error) {
         console.log(error);
+        setResultados([]);
       }
     };
     fetchResultados();

@@ -9,9 +9,10 @@ function ListaClientes() {
     const fetchClientes = async () => {
       try {
         const response = await axios.get("/api/cliente?_size=500");
-        setCliente(response.data);
+        setCliente(Array.isArray(response.data) ? response.data : []);
       } catch (error) {
         console.log(error);
+        setCliente([]);
       }
     };
     fetchClientes();

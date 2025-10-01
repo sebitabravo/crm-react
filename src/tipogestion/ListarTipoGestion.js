@@ -11,9 +11,10 @@ function ListaTiposGestion() {
         const response = await axios.get(
           "/api/tipo_gestion?_size=500"
         );
-        setTiposGestion(response.data);
+        setTiposGestion(Array.isArray(response.data) ? response.data : []);
       } catch (error) {
         console.log(error);
+        setTiposGestion([]);
       }
     };
     fetchTiposGestion();

@@ -11,9 +11,10 @@ function ListaUsuarios() {
         const response = await axios.get(
           "/api/usuario?_size=500"
         );
-        setUsuarios(response.data);
+        setUsuarios(Array.isArray(response.data) ? response.data : []);
       } catch (error) {
         console.log(error);
+        setUsuarios([]);
       }
     };
     fetchUsuarios();
