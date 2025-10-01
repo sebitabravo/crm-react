@@ -62,7 +62,7 @@ function ActualizarUsuario() {
         `/api/usuario/${id}`,
         usuario
       );
-      navigate("/usuarios");
+      navigate("/usuarios", { replace: true, state: { refresh: Date.now() } });
     } catch (error) {
       console.error("Error al actualizar el usuario:", error);
     }

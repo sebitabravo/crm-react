@@ -60,7 +60,7 @@ function ActualizarGestion() {
         `/api/gestion/${id}`,
         gestion
       );
-      navigate("/gestiones");
+      navigate("/gestiones", { replace: true, state: { refresh: Date.now() } });
     } catch (error) {
       console.error("Error al actualizar la gestión:", error);
     }

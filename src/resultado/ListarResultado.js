@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 function ListaResultados() {
   const [resultados, setResultados] = useState([]);
+  const location = useLocation();
 
   useEffect(() => {
     const fetchResultados = async () => {
@@ -18,7 +19,7 @@ function ListaResultados() {
       }
     };
     fetchResultados();
-  }, []);
+  }, [location.state]);
 
   return (
     <div className="container">

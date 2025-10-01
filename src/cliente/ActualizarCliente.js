@@ -60,7 +60,8 @@ function ActualizarCliente() {
         `/api/cliente/${id}`,
         cliente
       );
-      navigate("/clientes");
+      // Forzar navegación con replace para evitar caché
+      navigate("/clientes", { replace: true, state: { refresh: Date.now() } });
     } catch (error) {
       console.error("Error al actualizar el cliente:", error);
     }

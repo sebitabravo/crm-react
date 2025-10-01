@@ -56,7 +56,7 @@ function ActualizarTipoGestion() {
         `/api/tipo_gestion/${id}`,
         tipoGestion
       );
-      navigate("/tipogestion");
+      navigate("/tipogestion", { replace: true, state: { refresh: Date.now() } });
     } catch (error) {
       console.error("Error al actualizar el tipo de gestión:", error);
     }

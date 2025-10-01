@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 function ListaClientes() {
   const [clientes, setCliente] = useState([]);
+  const location = useLocation();
 
   useEffect(() => {
     const fetchClientes = async () => {
@@ -16,7 +17,7 @@ function ListaClientes() {
       }
     };
     fetchClientes();
-  }, []);
+  }, [location.state]); // Re-fetch cuando cambie el state de navegación
 
   return (
     <div className="container">

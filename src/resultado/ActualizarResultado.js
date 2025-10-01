@@ -56,7 +56,7 @@ function ActualizarResultado() {
         `/api/resultado/${id}`,
         resultado
       );
-      navigate("/resultados");
+      navigate("/resultados", { replace: true, state: { refresh: Date.now() } });
     } catch (error) {
       console.error("Error al actualizar el resultado:", error);
     }

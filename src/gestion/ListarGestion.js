@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 function ListaGestiones() {
   const [gestiones, setGestiones] = useState([]);
+  const location = useLocation();
 
   useEffect(() => {
     const fetchGestiones = async () => {
@@ -18,7 +19,7 @@ function ListaGestiones() {
       }
     };
     fetchGestiones();
-  }, []);
+  }, [location.state]);
 
   return (
     <div className="container">
